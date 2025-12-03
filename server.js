@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-mongoose.connect('mongodb://atlas-sql-693089c2cda18215599c9745-yydeee.a.query.mongodb.net/sample_mflix?ssl=true&authSource=admin', {
+mongoose.connect('mongodb+srv://mounawerzarai24409942_db_user:NihzBlM21vkQmcSg@cluster0.dst1rhc.mongodb.net/', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
