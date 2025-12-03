@@ -1,12 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
+
+// Serve static files
+app.use(express.static(path.join(__dirname)));
 
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Server Connection Check
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // MongoDB Connection
 mongoose.connect('mongodb+srv://zdabderrahmen_db_user:lwsgi6cA3ByFFYmN@angularcluster.qpnvofw.mongodb.net/?appName=AngularCluster', {
